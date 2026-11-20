@@ -116,8 +116,8 @@ func (s Set[T]) Clone() Set[T] {
 // s2.Difference(s1) = {a4, a5}
 func (s1 Set[T]) Difference(s2 Set[T]) Set[T] {
 	result := New[T]()
-	for key := range s1 {
-		if !s2.Has(key) {
+	for key := range s2 {
+		if !s1.Has(key) {
 			result.Insert(key)
 		}
 	}
